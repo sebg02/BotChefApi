@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3000;
 const corsOptions = {
   origin: function (origin, callback) {
     const allowedOrigins = ["https://botchef-react.vercel.app"];
-    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+    if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
       callback(new Error("Acceso no autorizado"));
