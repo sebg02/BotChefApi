@@ -6,7 +6,14 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 const corsOptions = {
-  origin: "https://botchef-react.vercel.app",
+  origin: function (origin, callback) {
+    const allowedOrigins = ["https://botchef-react.vercel.app"];
+    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error("Acceso no autorizado"));
+    }
+  },
   methods: ["GET"],
 };
 
