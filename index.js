@@ -6,7 +6,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 const corsOptions = {
-  origin: "https://botchef-react.vercel.app/",
+  origin: "https://botchef-react.vercel.app",
   methods: ["GET"],
 };
 
