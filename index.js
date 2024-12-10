@@ -5,14 +5,12 @@ require("dotenv").config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// para después
-// const corsOptions = {
-//   origin: "https://mi-frontend.com",
-//   methods: ["GET"], // Solo permite solicitudes GET
-// };
-// app.use(cors(corsOptions));
+const corsOptions = {
+  origin: "https://botchef-react.vercel.app/",
+  methods: ["GET"],
+};
 
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.get("/api-token", (req, res) => {
